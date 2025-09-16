@@ -9,6 +9,7 @@ public class TestController {
     public String index() {
         String returnMessage = "Hello World!";
         returnMessage += "1";
+        returnMessage += "2";
 
         return returnMessage;
     }

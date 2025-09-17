@@ -1,9 +1,6 @@
 package org.example.jk_test1.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -11,6 +8,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Data
 public class User implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;

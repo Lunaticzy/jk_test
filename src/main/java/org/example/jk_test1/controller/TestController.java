@@ -1,13 +1,15 @@
 package org.example.jk_test1.controller;
 
 import org.example.jk_test1.entity.User;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-@RestController
+@Controller
 public class TestController {
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
         String returnMessage = "Hello World!";
         returnMessage += "1";
         returnMessage += "2";
@@ -18,14 +20,18 @@ public class TestController {
         returnMessage += "7";
         returnMessage += "8";
 
+        model.addAttribute("message", returnMessage);
 
-        return returnMessage;
+
+        User test = User.builder().id(1).name("test").build();
+        model.addAttribute("user", test);
+
+        return "index";
     }
 
+    @ResponseBody
     @GetMapping("/test")
     public User test() {
-        return User.builder().id(1)
-                .name("test")
-                .build();
+        return User.builder().id(1).name("test").build();
     }
 }

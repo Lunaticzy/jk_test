@@ -1,5 +1,6 @@
 package org.example.jk_test1.controller;
 
+import org.example.jk_test1.entity.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +20,12 @@ public class TestController {
 
 
         return returnMessage;
+    }
+
+    @GetMapping("/test")
+    public User test() {
+        return User.builder().id(1)
+                .name("test")
+                .build();
     }
 }

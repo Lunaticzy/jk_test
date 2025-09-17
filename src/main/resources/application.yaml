@@ -1,4 +1,11 @@
 spring:
   application:
     name: jk_test1
-
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+    username: postgres
+    password: 123
+    driver-class-name: org.postgresql.Driver
+logging:
+  level:
+    org.springframework.jdbc.core.JdbcTemplate: DEBUG
